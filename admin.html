@@ -1,58 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Painel Administrativo GCM RP</title>
+  <title>Painel ADM - GCM</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="topo">
-  <div class="topo-conteudo">
-    <div class="logo-gcm">GCM RP</div>
-    <div class="titulo-gcm">
-      <h1>Painel de Comando</h1>
-      <p>Gestão de Recrutamento</p>
-    </div>
-  </div>
+<header>
+  <h1>Painel Administrativo GCM</h1>
 </header>
 
 <div class="container">
-  <div class="card">
-
-    <h3>Edital</h3>
-    <button onclick="abrir()">Abrir Edital</button>
-    <button class="secundario" onclick="fechar()">Fechar Edital</button>
-
-    <h3>Datas do Processo</h3>
-    <input id="entrevista" placeholder="Data Entrevista">
-    <input id="taf" placeholder="Data TAF">
-    <input id="curso" placeholder="Data Curso">
-    <button onclick="salvarDatas()">Salvar Datas</button>
-
-    <h3>Gerenciar Candidato</h3>
-    <input id="nome" placeholder="Nome">
-    <select id="fase">
-      <option>INSCRIÇÃO</option>
-      <option>ENTREVISTA</option>
-      <option>TAF</option>
-      <option>CURSO</option>
-    </select>
-
-    <button onclick="avancar()">Avançar Fase</button>
-    <button onclick="aprovar()">Aprovar</button>
-    <button class="secundario" onclick="reprovar()">Reprovar</button>
-
-    <h3>Histórico</h3>
-    <input id="histNome" placeholder="Nome">
-    <button onclick="verHistorico()">Ver Histórico</button>
-
-    <pre id="historico"></pre>
-
-    <button class="secundario" onclick="logout()">Sair</button>
-
-  </div>
+  <button onclick="abrir()">Abrir Edital</button>
+  <button onclick="fechar()">Fechar Edital</button>
 </div>
+
+<footer>Painel Oficial • GCM RP</footer>
 
 <script src="js/config.js"></script>
 <script src="js/admin.js"></script>
