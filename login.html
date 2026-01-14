@@ -2,17 +2,28 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login Administrativo GCM</title>
+  <title>Login Administrativo GCM RP</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<header class="topo">
+  <div class="topo-conteudo">
+    <div class="logo-gcm">GCM RP</div>
+    <div class="titulo-gcm">
+      <h1>Área Administrativa</h1>
+      <p>Painel de Comando</p>
+    </div>
+  </div>
+</header>
+
 <div class="container">
   <div class="card">
-    <h2>Área Administrativa</h2>
-    <p>Informe seu ID do Discord</p>
+    <h2>Login ADM</h2>
 
-    <input id="discordId" placeholder="ID Discord">
+    <label>ID do Discord</label>
+    <input id="discordId">
+
     <button onclick="login()">Entrar</button>
   </div>
 </div>
