@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Painel GCM</title>
+  <title>Painel Administrativo GCM</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,34 +11,51 @@
   <h1>Painel Administrativo GCM</h1>
 </header>
 
-<div class="container">
+<main class="container">
   <div class="card">
 
-    <h3>Edital</h3>
+    <h3>Controle do Edital</h3>
     <button onclick="abrir()">Abrir Edital</button>
     <button onclick="fechar()">Fechar Edital</button>
 
     <hr>
 
+    <h3>Datas Oficiais</h3>
+    <input id="entrevista" placeholder="Data Entrevista">
+    <input id="taf" placeholder="Data TAF">
+    <input id="curso" placeholder="Data Curso">
+    <button onclick="salvarDatas()">Salvar Datas</button>
+
+    <hr>
+
     <h3>Gerenciar Candidato</h3>
+    <input id="nome" placeholder="Nome">
+    <input id="discord" placeholder="Discord">
 
-<input id="nome" placeholder="Nome do candidato">
-<input id="discord" placeholder="Discord">
+    <select id="fase">
+      <option>INSCRIÇÃO</option>
+      <option>ENTREVISTA</option>
+      <option>TAF</option>
+      <option>CURSO</option>
+    </select>
 
-<select id="fase">
-  <option value="INSCRIÇÃO">Inscrição</option>
-  <option value="ENTREVISTA">Entrevista</option>
-  <option value="TAF">TAF</option>
-  <option value="CURSO">Curso de Formação</option>
-</select>
+    <button onclick="avancar()">Avançar Fase</button>
+    <button onclick="aprovar()">Aprovar</button>
+    <button onclick="reprovar()">Reprovar</button>
 
-<button onclick="avancar()">Avançar Fase</button>
-<button onclick="aprovar()">Aprovar</button>
-<button onclick="reprovar()">Reprovar</button>
+    <hr>
 
+    <h3>Histórico do Candidato</h3>
+    <input id="histNome" placeholder="Nome">
+    <button onclick="verHistorico()">Ver Histórico</button>
+
+    <pre id="historico"></pre>
+
+    <hr>
+    <button onclick="logout()">Sair</button>
 
   </div>
-</div>
+</main>
 
 <script src="js/config.js"></script>
 <script src="js/admin.js"></script>
