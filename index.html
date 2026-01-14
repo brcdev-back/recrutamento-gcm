@@ -13,19 +13,42 @@
 </header>
 
 <div class="container">
-  <h2>Inscrição</h2>
+  <h2>Inscrição para Recrutamento</h2>
+
   <p class="status" id="statusEdital"></p>
 
   <label>Nome Completo</label>
-  <input id="nome">
+  <input id="nome" placeholder="Nome e Sobrenome">
+
+  <label>ID no jogo</label>
+  <input id="idjogo" placeholder="Ex: 12345">
 
   <label>Discord</label>
   <input id="discord" placeholder="usuario#0000">
 
   <label>Idade</label>
-  <input id="idade">
+  <input id="idade" type="number">
+
+  <label>Por que você quer entrar na GCM?</label>
+  <textarea id="motivo" rows="4" placeholder="Explique seu interesse na corporação"></textarea>
 
   <button onclick="enviar()">Enviar Inscrição</button>
+
+  <p style="margin-top:15px;font-size:13px;color:#444;">
+    ⚠️ Caso seja aprovado em alguma etapa, você será avisado em nosso servidor do Discord.
+  </p>
+
+  <hr style="margin: 25px 0;">
+
+  <a href="login.html" style="
+    display:block;
+    text-align:center;
+    font-weight:bold;
+    text-decoration:none;
+    color:#0b3a5a;
+  ">
+    🔐 Área Administrativa
+  </a>
 </div>
 
 <hr style="margin: 25px 0;">
