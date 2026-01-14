@@ -2,20 +2,27 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Recrutamento GCM</title>
+  <title>Recrutamento GCM RP</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="topo">
-  <h1>GUARDA CIVIL MUNICIPAL</h1>
-  <p id="status"></p>
-  <p id="datas"></p>
+  <div class="topo-conteudo">
+    <div class="logo-gcm">GCM RP</div>
+    <div class="titulo-gcm">
+      <h1>Guarda Civil Municipal</h1>
+      <p>Recrutamento Oficial • Servidor Roleplay</p>
+    </div>
+  </div>
 </header>
 
-<main class="container">
-  <form class="card">
-    <h2>Inscrição para Recrutamento</h2>
+<div class="container">
+  <div class="card">
+    <h2>Inscrição</h2>
+
+    <p id="status"></p>
+    <p id="datas"></p>
 
     <label>Nome Completo</label>
     <input id="nome">
@@ -26,11 +33,11 @@
     <label>Idade</label>
     <input id="idade" type="number">
 
-    <button type="button" onclick="enviar()">Enviar Inscrição</button>
-  </form>
-</main>
+    <button onclick="enviar()">Enviar Inscrição</button>
+  </div>
+</div>
 
-<footer>GCM • Servir e Proteger</footer>
+<footer>GCM RP • Servir e Proteger</footer>
 
 <script src="js/config.js"></script>
 <script src="js/public.js"></script>
