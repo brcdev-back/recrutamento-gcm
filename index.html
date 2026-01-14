@@ -10,18 +10,27 @@
 
 <header>
   <h1>GUARDA CIVIL MUNICIPAL</h1>
-  <p id="status-edital">Status do Edital: Carregando...</p>
+  <p id="status-edital">Status do Edital: --</p>
 </header>
 
 <main class="card">
-  <h2>Recrutamento Oficial</h2>
-  <p>
-    Processo seletivo para ingresso na Guarda Civil Municipal.
-    Todas as etapas e comunicações são realizadas via Discord.
-  </p>
+  <h2>Inscrição para Recrutamento</h2>
 
-  <button onclick="enviarInscricao()">Solicitar Inscrição</button>
+  <label>Nome Completo</label>
+  <input id="nome" type="text">
+
+  <label>Discord</label>
+  <input id="discord" type="text" placeholder="usuario#0000">
+
+  <label>Idade</label>
+  <input id="idade" type="number">
+
+  <button onclick="enviarInscricao()">Enviar Inscrição</button>
 </main>
+
+<footer>
+  <p>GCM • Servir e Proteger</p>
+</footer>
 
 <script src="js/public.js"></script>
 </body>
