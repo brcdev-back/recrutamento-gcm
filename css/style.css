@@ -1,74 +1,43 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
   margin: 0;
-  background: #f4f6f8;
-  color: #333;
+  font-family: Arial;
+  background: #f2f2f2;
 }
 
-header {
+.topo {
   background: #0b3c5d;
   color: white;
+  padding: 20px;
   text-align: center;
-  padding: 25px;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #ddd;
+.container {
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
 }
 
 .card {
-  max-width: 500px;
   background: white;
-  margin: 40px auto;
   padding: 25px;
-  border-radius: 8px;
+  width: 400px;
+  border-radius: 6px;
 }
 
-h2 {
-  color: #0b3c5d;
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input {
+input, button {
   width: 100%;
-  padding: 8px;
-  margin: 5px 0 15px 0;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 button {
-  width: 100%;
-  padding: 10px;
   background: #0b3c5d;
   color: white;
   border: none;
-  border-radius: 5px;
-  margin-top: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #092f48;
-}
-
-.aprovar {
-  background: #1b8f3a;
-}
-
-.reprovar {
-  background: #c0392b;
-}
-
-hr {
-  margin: 20px 0;
+footer {
+  text-align: center;
+  margin-top: 40px;
 }
