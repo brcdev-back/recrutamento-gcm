@@ -2,21 +2,20 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Acesso Administrativo</title>
+  <title>Login GCM</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<main class="card">
-  <h2>Acesso Administrativo</h2>
-  <p>Uso exclusivo da Coordenação GCM</p>
+<div class="container">
+  <div class="card">
+    <h2>Login Administrativo</h2>
+    <input id="senha" type="password" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+  </div>
+</div>
 
-  <label>Senha</label>
-  <input type="password" id="senha">
-
-  <button onclick="login()">Entrar</button>
-</main>
-
+<script src="js/config.js"></script>
 <script src="js/login.js"></script>
 </body>
 </html>
