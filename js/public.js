@@ -31,7 +31,7 @@ function enviar() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       embeds: [{
-        title: "📥 Nova Inscrição - GCM",
+        title: "📥 Nova Inscrição - GCM RP",
         color: 3447003,
         fields: [
           { name: "Nome", value: nome },
