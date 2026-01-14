@@ -1,12 +1,9 @@
-const WEBHOOK_INSCRICAO = "https://discord.com/api/webhooks/1460801324567232700/lwkz3_C0fr6LJ2JigLapb9GfBuxe7YrLfRXk0ql0nCro64da8rtzTkbY4sez0V2pu-99";
-
 const status = localStorage.getItem("edital") || "FECHADO";
-document.getElementById("status-edital").innerText =
-  "Status do Edital: " + status;
+document.getElementById("status").innerText = "Status do Edital: " + status;
 
-function enviarInscricao() {
+function enviar() {
   if (status !== "ABERTO") {
-    alert("Edital fechado no momento.");
+    alert("Edital fechado.");
     return;
   }
 
@@ -14,15 +11,24 @@ function enviarInscricao() {
   const discord = document.getElementById("discord").value;
   const idade = document.getElementById("idade").value;
 
+  if (!nome || !discord || !idade) {
+    alert("Preencha todos os campos.");
+    return;
+  }
+
   fetch(WEBHOOK_INSCRICAO, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      content:
-        "📥 **NOVA INSCRIÇÃO – GCM**\n" +
-        "Nome: " + nome + "\n" +
-        "Discord: " + discord + "\n" +
-        "Idade: " + idade
+      embeds: [{
+        title: "📥 Nova Inscrição - GCM",
+        color: 3447003,
+        fields: [
+          { name: "Nome", value: nome },
+          { name: "Discord", value: discord },
+          { name: "Idade", value: idade }
+        ]
+      }]
     })
   });
 
