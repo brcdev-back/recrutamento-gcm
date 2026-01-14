@@ -2,40 +2,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Painel Administrativo GCM</title>
+  <title>Painel GCM</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <h1>PAINEL ADMINISTRATIVO – GCM</h1>
+<header class="topo">
+  <h1>Painel Administrativo GCM</h1>
 </header>
 
-<main class="card">
+<div class="container">
+  <div class="card">
 
-  <h2>Edital de Recrutamento</h2>
-  <button onclick="abrirEdital()">Abrir Edital</button>
-  <button onclick="fecharEdital()">Fechar Edital</button>
+    <h3>Edital</h3>
+    <button onclick="abrir()">Abrir Edital</button>
+    <button onclick="fechar()">Fechar Edital</button>
 
-  <hr>
+    <hr>
 
-  <h2>Avaliação de Candidato</h2>
+    <h3>Avaliação</h3>
+    <input id="nome" placeholder="Nome">
+    <input id="discord" placeholder="Discord">
 
-  <label>Nome do Candidato</label>
-  <input id="nome">
+    <button onclick="aprovar()">Aprovar</button>
+    <button onclick="reprovar()">Reprovar</button>
 
-  <label>Discord</label>
-  <input id="discord">
+  </div>
+</div>
 
-  <button class="aprovar" onclick="aprovar()">Aprovar</button>
-  <button class="reprovar" onclick="reprovar()">Reprovar</button>
-
-  <hr>
-
-  <button onclick="logout()">Encerrar Sessão</button>
-
-</main>
-
+<script src="js/config.js"></script>
 <script src="js/admin.js"></script>
 </body>
 </html>
