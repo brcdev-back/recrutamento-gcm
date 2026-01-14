@@ -1,8 +1,18 @@
-const status = localStorage.getItem("edital") || "FECHADO";
-document.getElementById("status").innerText = "Status do Edital: " + status;
+const edital = JSON.parse(localStorage.getItem("editalData")) || {
+  status: "FECHADO",
+  datas: {}
+};
+
+document.getElementById("status").innerText =
+  "Status do Edital: " + edital.status;
+
+document.getElementById("datas").innerText =
+  `Entrevista: ${edital.datas.entrevista || "A definir"} | 
+   TAF: ${edital.datas.taf || "A definir"} | 
+   Curso: ${edital.datas.curso || "A definir"}`;
 
 function enviar() {
-  if (status !== "ABERTO") {
+  if (edital.status !== "ABERTO") {
     alert("Edital fechado.");
     return;
   }
