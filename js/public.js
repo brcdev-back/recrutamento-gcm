@@ -1,4 +1,4 @@
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1460799410433687748/BtAcdAShKKMjftWmnso95sq5DV4Hl9hQnSyHP-QOrab5AxD61ct4xXFJJX8q4Onn04E_";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1460801324567232700/lwkz3_C0fr6LJ2JigLapb9GfBuxe7YrLfRXk0ql0nCro64da8rtzTkbY4sez0V2pu-99";
 
 const statusEdital = localStorage.getItem("edital") || "FECHADO";
 document.getElementById("status-edital").innerText =
