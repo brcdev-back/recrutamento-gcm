@@ -34,24 +34,46 @@ function enviar() {
   lista.push(candidato);
   localStorage.setItem("candidatos", JSON.stringify(lista));
 
-  fetch(DISCORD_WEBHOOK, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      embeds: [{
-        title: "📥 Nova Inscrição - GCM RP",
-        color: 3447003,
-        fields: [
-          { name: "Nome", value: nome },
-          { name: "ID no Jogo", value: idjogo, inline: true },
-          { name: "Discord", value: discord, inline: true },
-          { name: "Idade", value: idade, inline: true },
-          { name: "Motivação", value: motivo }
-        ],
-        footer: { text: "Sistema de Recrutamento • GCM RP" }
-      }]
-    })
-  });
+fetch(DISCORD_WEBHOOK, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    embeds: [{
+      title: "📥 NOVA INSCRIÇÃO – GCM RP",
+      description: "📄 Dados enviados pelo candidato",
+      color: 3447003,
+      fields: [
+        {
+          name: "👤 Nome Completo",
+          value: nome || "Não informado",
+        },
+        {
+          name: "🎮 ID no Jogo",
+          value: idjogo || "Não informado",
+          inline: true
+        },
+        {
+          name: "💬 Discord",
+          value: discord || "Não informado",
+          inline: true
+        },
+        {
+          name: "🎂 Idade",
+          value: idade || "Não informado",
+          inline: true
+        },
+        {
+          name: "📝 Por que deseja entrar na GCM?",
+          value: motivo.length > 900 ? motivo.substring(0, 900) + "..." : motivo
+        }
+      ],
+      footer: {
+        text: "Sistema de Recrutamento • Guarda Civil Municipal RP"
+      },
+      timestamp: new Date()
+    }]
+  })
+});
 
   alert("Inscrição enviada com sucesso.");
 
