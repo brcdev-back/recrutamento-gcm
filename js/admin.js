@@ -8,14 +8,25 @@ let candidatos = JSON.parse(localStorage.getItem("candidatos")) || [];
 
 function render() {
   tabela.innerHTML = "";
+
   candidatos.forEach(c => {
     tabela.innerHTML += `
       <tr>
-        <td>${c.nome}</td>
-        <td>${c.discord}</td>
-        <td>${c.idade}</td>
-        <td class="${c.status === "APROVADO" ? "aprovado" : c.status === "REPROVADO" ? "reprovado" : ""}">
-          ${c.status}
+        <td>${c.nome || "-"}</td>
+        <td>${c.idjogo || "-"}</td>
+        <td>${c.discord || "-"}</td>
+        <td>${c.idade || "-"}</td>
+        <td style="max-width:250px;white-space:pre-wrap;">
+          ${c.motivo || "-"}
+        </td>
+        <td class="${
+          c.status === "APROVADO"
+            ? "aprovado"
+            : c.status === "REPROVADO"
+            ? "reprovado"
+            : ""
+        }">
+          ${c.status || "PENDENTE"}
         </td>
         <td>
           <button onclick="aprovar(${c.id})">✅</button>
@@ -25,6 +36,7 @@ function render() {
     `;
   });
 }
+
 
 function salvar() {
   localStorage.setItem("candidatos", JSON.stringify(candidatos));
