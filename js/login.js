@@ -1,5 +1,5 @@
 function login() {
-  const id = document.getElementById("discordId").value;
+  const id = document.getElementById("id").value;
 
   if (ADMINS.includes(id)) {
     localStorage.setItem("auth", id);
