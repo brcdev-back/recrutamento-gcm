@@ -1,44 +1,52 @@
-const WEBHOOK_LOGS = "COLE_AQUI_WEBHOOK_LOGS";
-
-if (localStorage.getItem("admin") !== "logado") {
+if (localStorage.getItem("auth") !== "ok") {
   window.location.href = "login.html";
 }
 
-function abrirEdital() {
+function abrir() {
   localStorage.setItem("edital", "ABERTO");
-  log("🟢 Edital ABERTO pela coordenação.");
-  alert("Edital aberto.");
+  log("Edital aberto");
 }
 
-function fecharEdital() {
+function fechar() {
   localStorage.setItem("edital", "FECHADO");
-  log("🔴 Edital FECHADO pela coordenação.");
-  alert("Edital fechado.");
+  log("Edital fechado");
 }
 
 function aprovar() {
-  const nome = document.getElementById("nome").value;
-  const discord = document.getElementById("discord").value;
-  log("✅ APROVADO\nNome: " + nome + "\nDiscord: " + discord);
-  alert("Candidato aprovado.");
+  resultado("APROVADO", 3066993);
 }
 
 function reprovar() {
-  const nome = document.getElementById("nome").value;
-  const discord = document.getElementById("discord").value;
-  log("❌ REPROVADO\nNome: " + nome + "\nDiscord: " + discord);
-  alert("Candidato reprovado.");
+  resultado("REPROVADO", 15158332);
 }
 
-function logout() {
-  localStorage.removeItem("admin");
-  window.location.href = "login.html";
+function resultado(status, color) {
+  const nome = document.getElementById("nome").value;
+  const discord = document.getElementById("discord").value;
+
+  fetch(WEBHOOK_LOGS, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      embeds: [{
+        title: "📋 Resultado GCM",
+        color,
+        fields: [
+          { name: "Nome", value: nome },
+          { name: "Discord", value: discord },
+          { name: "Status", value: status }
+        ]
+      }]
+    })
+  });
+
+  alert("Resultado enviado.");
 }
 
 function log(msg) {
   fetch(WEBHOOK_LOGS, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ content: msg })
+    body: JSON.stringify({ content: "🛡️ " + msg })
   });
 }
