@@ -1,96 +1,99 @@
-:root {
-  --azul-gcm: #0b3c5d;
-  --azul-escuro: #06283d;
-  --cinza-bg: #f1f3f6;
-  --cinza-card: #ffffff;
-  --cinza-texto: #333;
-  --cinza-borda: #dcdcdc;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: var(--cinza-bg);
+  background: #f2f4f7;
+  color: #1c1c1c;
 }
 
-.topo {
-  background: linear-gradient(90deg, var(--azul-escuro), var(--azul-gcm));
+header {
+  background: #0b3a5a;
   color: #fff;
-  padding: 20px;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-.topo-conteudo {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+header h1 {
+  font-size: 34px;
+  font-weight: 700;
 }
 
-.logo-gcm {
-  background: #fff;
-  color: var(--azul-gcm);
-  font-weight: bold;
-  padding: 12px 16px;
-  border-radius: 6px;
-}
-
-.titulo-gcm h1 {
-  margin: 0;
-  font-size: 22px;
-}
-
-.titulo-gcm p {
-  margin: 0;
-  font-size: 13px;
-  opacity: 0.85;
+header p {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.9;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  padding: 50px 20px;
-}
-
-.card {
-  background: var(--cinza-card);
-  max-width: 480px;
-  width: 100%;
+  max-width: 420px;
+  margin: 50px auto;
+  background: #fff;
   padding: 30px;
   border-radius: 8px;
-  border: 1px solid var(--cinza-borda);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 15px 40px rgba(0,0,0,.1);
 }
 
-h2, h3 {
-  color: var(--azul-gcm);
+h2 {
+  margin-bottom: 15px;
+  color: #0b3a5a;
 }
 
-input, select, button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-button {
-  background: var(--azul-gcm);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.status {
+  margin-bottom: 15px;
   font-weight: bold;
 }
 
-button.secundario {
-  background: #555;
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
 }
 
-pre {
-  background: #f7f7f7;
-  padding: 15px;
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #0b3a5a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #082c45;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 13px;
+  margin: 40px 0;
+  font-size: 14px;
+  color: #444;
 }
+
+/* ADMIN */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.aprovado { color: green; font-weight: bold; }
+.reprovado { color: red; font-weight: bold; }
