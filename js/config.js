@@ -1,9 +1,7 @@
-// WEBHOOKS DISCORD
-const WEBHOOK_INSCRICAO = "https://discord.com/api/webhooks/1460801324567232700/lwkz3_C0fr6LJ2JigLapb9GfBuxe7YrLfRXk0ql0nCro64da8rtzTkbY4sez0V2pu-99";
-const WEBHOOK_LOGS = "https://discord.com/api/webhooks/1460799410433687748/BtAcdAShKKMjftWmnso95sq5DV4Hl9hQnSyHP-QOrab5AxD61ct4xXFJJX8q4Onn04E_";
-
-// IDS DISCORD AUTORIZADOS (ADM)
+// ID dos administradores (Discord ID)
 const ADMINS = [
-  "1243634668457299982",
-  "987654321098765432"
+  "1243634668457299982"
 ];
+
+// Webhook do Discord
+const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1460801324567232700/lwkz3_C0fr6LJ2JigLapb9GfBuxe7YrLfRXk0ql0nCro64da8rtzTkbY4sez0V2pu-99";
