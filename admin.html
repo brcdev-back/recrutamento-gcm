@@ -20,12 +20,22 @@
 
     <hr>
 
-    <h3>Avaliação</h3>
-    <input id="nome" placeholder="Nome">
-    <input id="discord" placeholder="Discord">
+    <h3>Gerenciar Candidato</h3>
 
-    <button onclick="aprovar()">Aprovar</button>
-    <button onclick="reprovar()">Reprovar</button>
+<input id="nome" placeholder="Nome do candidato">
+<input id="discord" placeholder="Discord">
+
+<select id="fase">
+  <option value="INSCRIÇÃO">Inscrição</option>
+  <option value="ENTREVISTA">Entrevista</option>
+  <option value="TAF">TAF</option>
+  <option value="CURSO">Curso de Formação</option>
+</select>
+
+<button onclick="avancar()">Avançar Fase</button>
+<button onclick="aprovar()">Aprovar</button>
+<button onclick="reprovar()">Reprovar</button>
+
 
   </div>
 </div>
