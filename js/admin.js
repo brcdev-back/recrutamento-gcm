@@ -1,71 +1,61 @@
-if (localStorage.getItem("auth") !== "ok") {
+if (!localStorage.getItem("auth")) {
   window.location.href = "login.html";
 }
 
+let historico = JSON.parse(localStorage.getItem("historico")) || {};
+
 function abrir() {
-  localStorage.setItem("edital", "ABERTO");
+  salvarEdital("ABERTO");
   log("📢 Edital ABERTO");
 }
 
 function fechar() {
-  localStorage.setItem("edital", "FECHADO");
+  salvarEdital("FECHADO");
   log("⛔ Edital FECHADO");
 }
 
+function salvarEdital(status) {
+  const data = JSON.parse(localStorage.getItem("editalData")) || { datas: {} };
+  data.status = status;
+  localStorage.setItem("editalData", JSON.stringify(data));
+}
+
+function salvarDatas() {
+  const data = {
+    status: "ABERTO",
+    datas: {
+      entrevista: entrevista.value,
+      taf: taf.value,
+      curso: curso.value
+    }
+  };
+  localStorage.setItem("editalData", JSON.stringify(data));
+  log("📅 Datas do edital atualizadas");
+}
+
 function avancar() {
-  const nome = document.getElementById("nome").value;
-  const discord = document.getElementById("discord").value;
-  const fase = document.getElementById("fase").value;
-
-  if (!nome || !discord) {
-    alert("Dados incompletos.");
-    return;
-  }
-
-  enviarLog({
-    title: "➡️ Avanço de Fase - GCM",
-    color: 3447003,
-    fields: [
-      { name: "Nome", value: nome },
-      { name: "Discord", value: discord },
-      { name: "Nova Fase", value: fase }
-    ]
-  });
-
-  alert("Fase atualizada.");
+  registrar(`Avançou para ${fase.value}`);
 }
 
 function aprovar() {
-  resultadoFinal("APROVADO", 3066993);
+  registrar("APROVADO");
 }
 
 function reprovar() {
-  resultadoFinal("REPROVADO", 15158332);
+  registrar("REPROVADO");
 }
 
-function resultadoFinal(status, color) {
+function registrar(msg) {
   const nome = document.getElementById("nome").value;
-  const discord = document.getElementById("discord").value;
-
-  enviarLog({
-    title: "🏁 Resultado Final - GCM",
-    color,
-    fields: [
-      { name: "Nome", value: nome },
-      { name: "Discord", value: discord },
-      { name: "Situação", value: status }
-    ]
-  });
-
-  alert("Resultado enviado.");
+  if (!historico[nome]) historico[nome] = [];
+  historico[nome].push(msg);
+  localStorage.setItem("historico", JSON.stringify(historico));
+  log(`👮 ${nome}: ${msg}`);
 }
 
-function enviarLog(embed) {
-  fetch(WEBHOOK_LOGS, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ embeds: [embed] })
-  });
+function verHistorico() {
+  const nome = histNome.value;
+  historicoDiv.innerText = historico[nome]?.join("\n") || "Sem registros.";
 }
 
 function log(msg) {
@@ -74,4 +64,9 @@ function log(msg) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ content: msg })
   });
+}
+
+function logout() {
+  localStorage.removeItem("auth");
+  window.location.href = "login.html";
 }
