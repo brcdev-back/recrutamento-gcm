@@ -10,54 +10,19 @@
 
 <header>
   <h1>GUARDA CIVIL MUNICIPAL</h1>
-  <p>Recrutamento Oficial</p>
+  <p id="status-edital">Status do Edital: Carregando...</p>
 </header>
 
-<nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#etapas">Etapas</a>
-  <a href="#inscricao">Inscrição</a>
-  <a href="admin.html">Administração</a>
-</nav>
-
-<main>
-
-<section id="sobre" class="card">
-  <h2>Sobre o Recrutamento</h2>
+<main class="card">
+  <h2>Recrutamento Oficial</h2>
   <p>
-    A Guarda Civil Municipal abre processo seletivo para candidatos
-    interessados em ingressar na carreira policial, atuando com ética,
-    disciplina e compromisso com a segurança pública.
+    Processo seletivo para ingresso na Guarda Civil Municipal.
+    Todas as etapas e comunicações são realizadas via Discord.
   </p>
-</section>
 
-<section id="etapas" class="card">
-  <h2>Etapas do Processo Seletivo</h2>
-  <ol>
-    <li>Edital – leitura e aceite das normas</li>
-    <li>Entrevista – avaliação comportamental</li>
-    <li>TAF – Teste de Aptidão Física</li>
-    <li>Treinamento Operacional</li>
-  </ol>
-</section>
-
-<section id="inscricao" class="card">
-  <h2>Inscrição</h2>
-  <p>
-    As inscrições são realizadas exclusivamente via Discord.
-  </p>
-  <button onclick="registrarLog('Usuário clicou em Inscrição')">
-    Solicitar Inscrição
-  </button>
-</section>
-
+  <button onclick="enviarInscricao()">Solicitar Inscrição</button>
 </main>
 
-<footer>
-  <p>© GCM - Sistema de Recrutamento</p>
-</footer>
-
-<script src="js/main.js"></script>
+<script src="js/public.js"></script>
 </body>
 </html>
-
