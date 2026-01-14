@@ -10,10 +10,12 @@ function enviar() {
   }
 
   const nome = document.getElementById("nome").value.trim();
+  const idjogo = document.getElementById("idjogo").value.trim();
   const discord = document.getElementById("discord").value.trim();
   const idade = document.getElementById("idade").value.trim();
+  const motivo = document.getElementById("motivo").value.trim();
 
-  if (!nome || !discord || !idade) {
+  if (!nome || !idjogo || !discord || !idade || !motivo) {
     alert("Preencha todos os campos.");
     return;
   }
@@ -21,8 +23,10 @@ function enviar() {
   const candidato = {
     id: Date.now(),
     nome,
+    idjogo,
     discord,
     idade,
+    motivo,
     status: "PENDENTE"
   };
 
@@ -38,15 +42,18 @@ function enviar() {
         title: "📥 Nova Inscrição - GCM RP",
         color: 3447003,
         fields: [
-          { name: "Nome", value: nome, inline: true },
+          { name: "Nome", value: nome },
+          { name: "ID no Jogo", value: idjogo, inline: true },
           { name: "Discord", value: discord, inline: true },
-          { name: "Idade", value: idade, inline: true }
+          { name: "Idade", value: idade, inline: true },
+          { name: "Motivação", value: motivo }
         ],
-        footer: { text: "Sistema de Recrutamento GCM RP" }
+        footer: { text: "Sistema de Recrutamento • GCM RP" }
       }]
     })
-  }).catch(() => alert("Erro ao enviar log para o Discord."));
+  });
 
   alert("Inscrição enviada com sucesso.");
-  document.querySelectorAll("input").forEach(i => i.value = "");
+
+  document.querySelectorAll("input, textarea").forEach(e => e.value = "");
 }
