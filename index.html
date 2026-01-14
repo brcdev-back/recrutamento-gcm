@@ -2,44 +2,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Recrutamento GCM RP</title>
+  <title>GCM RP - Recrutamento</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="topo">
-  <div class="topo-conteudo">
-    <div class="logo-gcm">GCM RP</div>
-    <div class="titulo-gcm">
-      <h1>Guarda Civil Municipal</h1>
-      <p>Recrutamento Oficial • Servidor Roleplay</p>
-    </div>
-  </div>
+<header>
+  <h1>Guarda Civil Municipal</h1>
+  <p>Recrutamento Oficial • Servidor Roleplay</p>
 </header>
 
 <div class="container">
-  <div class="card">
-    <h2>Inscrição</h2>
+  <h2>Inscrição</h2>
+  <p class="status" id="statusEdital"></p>
 
-    <p id="status"></p>
-    <p id="datas"></p>
+  <label>Nome Completo</label>
+  <input id="nome">
 
-    <label>Nome Completo</label>
-    <input id="nome">
+  <label>Discord</label>
+  <input id="discord" placeholder="usuario#0000">
 
-    <label>Discord</label>
-    <input id="discord" placeholder="usuario#0000">
+  <label>Idade</label>
+  <input id="idade">
 
-    <label>Idade</label>
-    <input id="idade" type="number">
-
-    <button onclick="enviar()">Enviar Inscrição</button>
-  </div>
+  <button onclick="enviar()">Enviar Inscrição</button>
 </div>
 
 <footer>GCM RP • Servir e Proteger</footer>
 
 <script src="js/config.js"></script>
-<script src="js/public.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
