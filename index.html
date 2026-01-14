@@ -3,35 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Recrutamento GCM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
+<header class="topo">
   <h1>GUARDA CIVIL MUNICIPAL</h1>
-  <p id="status-edital">Status do Edital: --</p>
+  <span id="status"></span>
 </header>
 
-<main class="card">
-  <h2>Inscrição para Recrutamento</h2>
+<main class="container">
+  <form class="card">
+    <h2>Inscrição para Recrutamento</h2>
 
-  <label>Nome Completo</label>
-  <input id="nome" type="text">
+    <label>Nome Completo</label>
+    <input id="nome">
 
-  <label>Discord</label>
-  <input id="discord" type="text" placeholder="usuario#0000">
+    <label>Discord</label>
+    <input id="discord" placeholder="usuario#0000">
 
-  <label>Idade</label>
-  <input id="idade" type="number">
+    <label>Idade</label>
+    <input id="idade" type="number">
 
-  <button onclick="enviarInscricao()">Enviar Inscrição</button>
+    <button type="button" onclick="enviar()">Enviar Inscrição</button>
+  </form>
 </main>
 
-<footer>
-  <p>GCM • Servir e Proteger</p>
-</footer>
+<footer>GCM • Servir e Proteger</footer>
 
+<script src="js/config.js"></script>
 <script src="js/public.js"></script>
 </body>
 </html>
