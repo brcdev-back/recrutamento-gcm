@@ -1,27 +1,67 @@
+:root {
+  --azul-gcm: #0b3c5d;
+  --azul-escuro: #06283d;
+  --cinza-bg: #f1f3f6;
+  --cinza-card: #ffffff;
+  --cinza-texto: #333;
+  --cinza-borda: #dcdcdc;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f4f6f8;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--cinza-bg);
 }
 
 .topo {
-  background: #0b3c5d;
-  color: white;
+  background: linear-gradient(90deg, var(--azul-escuro), var(--azul-gcm));
+  color: #fff;
   padding: 20px;
-  text-align: center;
+}
+
+.topo-conteudo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-gcm {
+  background: #fff;
+  color: var(--azul-gcm);
+  font-weight: bold;
+  padding: 12px 16px;
+  border-radius: 6px;
+}
+
+.titulo-gcm h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.titulo-gcm p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.85;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  padding: 50px 20px;
 }
 
 .card {
-  background: white;
-  padding: 25px;
-  width: 420px;
-  border-radius: 6px;
+  background: var(--cinza-card);
+  max-width: 480px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--cinza-borda);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+h2, h3 {
+  color: var(--azul-gcm);
 }
 
 input, select, button {
@@ -31,18 +71,26 @@ input, select, button {
 }
 
 button {
-  background: #0b3c5d;
-  color: white;
+  background: var(--azul-gcm);
+  color: #fff;
   border: none;
-  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-button:hover {
-  opacity: 0.9;
+button.secundario {
+  background: #555;
+}
+
+pre {
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 footer {
   text-align: center;
-  margin: 30px;
-  color: #333;
+  padding: 20px;
+  font-size: 13px;
 }
