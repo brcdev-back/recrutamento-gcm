@@ -30,7 +30,7 @@ function salvarDatas() {
     }
   };
   localStorage.setItem("editalData", JSON.stringify(data));
-  log("📅 Datas do edital atualizadas");
+  log("📅 Datas atualizadas");
 }
 
 function avancar() {
