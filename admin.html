@@ -2,32 +2,37 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Painel Administrativo - GCM</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo GCM</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-  <h1>PAINEL ADMINISTRATIVO</h1>
-  <p>Uso restrito à coordenação</p>
+  <h1>PAINEL ADMINISTRATIVO – GCM</h1>
 </header>
 
 <main class="card">
 
-  <h2>Status do Edital</h2>
+  <h2>Edital de Recrutamento</h2>
   <button onclick="abrirEdital()">Abrir Edital</button>
   <button onclick="fecharEdital()">Fechar Edital</button>
 
   <hr>
 
-  <h2>Gerenciar Candidato</h2>
+  <h2>Avaliação de Candidato</h2>
 
-  <input type="text" id="nome" placeholder="Nome do candidato">
-  <input type="text" id="discord" placeholder="Discord (ex: usuario#0000)">
+  <label>Nome do Candidato</label>
+  <input id="nome">
 
-  <button onclick="aprovar()">Aprovar</button>
-  <button onclick="reprovar()">Reprovar</button>
+  <label>Discord</label>
+  <input id="discord">
+
+  <button class="aprovar" onclick="aprovar()">Aprovar</button>
+  <button class="reprovar" onclick="reprovar()">Reprovar</button>
+
+  <hr>
+
+  <button onclick="logout()">Encerrar Sessão</button>
 
 </main>
 
