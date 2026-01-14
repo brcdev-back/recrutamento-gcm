@@ -1,33 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Painel Administrativo - GCM RP</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<header>
-  <h1>Painel Administrativo GCM</h1>
-  <p>Gestão de Recrutamento • Servidor RP</p>
-</header>
-
 <div class="container">
-  <h2>Controle do Edital</h2>
+  <h2>Candidatos Inscritos</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Discord</th>
+        <th>Idade</th>
+        <th>Status</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody id="lista"></tbody>
+  </table>
+
+  <hr>
 
   <button onclick="abrir()">🟢 Abrir Edital</button>
   <button onclick="fechar()">🔴 Fechar Edital</button>
-
-  <hr style="margin: 20px 0;">
-
-  <button onclick="logout()" style="background:#8b0000;">
-    🚪 Sair
-  </button>
+  <button onclick="logout()" style="background:#8b0000;">🚪 Sair</button>
 </div>
-
-<footer>Painel Oficial • GCM RP</footer>
-
-<script src="js/config.js"></script>
-<script src="js/admin.js"></script>
-</body>
-</html>
